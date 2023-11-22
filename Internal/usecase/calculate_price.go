@@ -3,10 +3,12 @@ package usecase
 import "github.com/devfullcycle/go-intensivo-jul/Internal/entity"
 
 type OrderInput struct {
-	ID    string
-	Price float64
-	Tax   float64
+	ID    string  `json:"id"`
+	Price float64 `json:"price"`
+	Tax   float64 `json:"tax"`
 }
+
+// {"id": "3", "price": 30.0, "tax": 3}
 
 type OrderOutput struct {
 	ID         string
