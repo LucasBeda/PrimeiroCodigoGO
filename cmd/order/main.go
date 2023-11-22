@@ -1,4 +1,4 @@
-package order
+package main
 
 import (
 	"database/sql"
@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("sqlite3", "db.dbPrimeiroCodigoGO")
+	db, err := sql.Open("sqlite3", "db.PrimeiroCodigoGO")
 	if err != nil {
 		panic(err)
 	}
@@ -33,13 +33,12 @@ func main() {
 	//	Price: 20.0,
 	//	Tax:   2.0,
 	//}
-	//
 	//output, err := uc.Execute(input)
 	//if err != nil {
 	//	panic(err)
 	//}
 	//fmt.Println(output)
-} //
+}
 
 func rabbitmqWorker(msgChan chan amqp.Delivery, uc *usecase.CalculateFinalPrice) {
 	fmt.Println("Starting Worker")
